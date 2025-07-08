@@ -16,8 +16,13 @@ class View(ft.UserControl):
         self._controller = None
         # graphical elements
         self._title = None
-        self._txt_name = None
-        self._txt_result = None
+        self._ddStore = None
+        self._txtIntK = None
+        self._btnCreaGrafo = None
+        self._btnCerca = None
+        self._ddNode = None
+        self._btnRicorsione = None
+        self.txt_result = None
 
     def load_interface(self):
         # title
@@ -34,10 +39,7 @@ class View(ft.UserControl):
         row1 = ft.Row([cont, self._txtIntK, self._btnCreaGrafo], alignment=ft.MainAxisAlignment.CENTER,
                       vertical_alignment=ft.CrossAxisAlignment.END)
 
-
-
-        self._btnCerca = ft.ElevatedButton(text="Cerca Percorso Massimo",
-                                           on_click=self._controller.handleCerca)
+        self._btnCerca = ft.ElevatedButton(text="Cerca Percorso Massimo", on_click=self._controller.handleCerca)
 
         self._ddNode = ft.Dropdown(label="Node")
         cont2 = ft.Container(self._ddNode, width=250, alignment=ft.alignment.top_left)

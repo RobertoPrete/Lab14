@@ -20,7 +20,14 @@ class Controller:
         self._store = e.control.data
 
     def handleCreaGrafo(self, e):
-        pass
+        self._model.buildGraph()
+        self._view.txt_result.controls.clear()
+        self._view.txt_result.controls.append(ft.Text("Grafo correttamente creato: "))
+        numero_nodi, numero_archi = self._model.getGraphDetails()
+        self._view.txt_result.controls.append(ft.Text(f"Numero di nodi: {numero_nodi}"))
+        self._view.txt_result.controls.append(ft.Text(f"Numero di archi: {numero_archi}"))
+        self._view.txt_result.controls.append(ft.Text(f"Nodo di partenza: "))
+        self._view.update_page()
 
     def handleCerca(self, e):
         pass
