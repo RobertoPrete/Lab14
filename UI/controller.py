@@ -55,6 +55,9 @@ class Controller:
 
     def handleCerca(self, e):
         self._view.txt_result.controls.append(ft.Text(f"Nodo di partenza: {self._node.order_id}"))
+        cammino = self._model.getLongestPath(self._node.order_id)
+        for nodo in cammino:
+            self._view.txt_result.controls.append(ft.Text(f"{nodo.order_id}"))
         self._view.update_page()
 
     def handleRicorsione(self, e):
